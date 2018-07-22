@@ -32,5 +32,5 @@ package.json
     "library": "Vendor",
     "manifest": "dist/mainifest.json",
     "path": "dist"
-	}
+  }
 ```
