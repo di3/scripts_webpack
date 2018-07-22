@@ -7,12 +7,6 @@ const uglifyJsPluginParams = MINIFY ? undefined : { beautify: true, compress: { 
 
 var entry = ___dirname + package_json.dist.entry;
 
-var alias = {}; 
-var data = package_json.vendor.entry;
-for (var i = 0; i < data.length; i++) {
-  alias[data[i]] = ___dirname + 'node_modules/', data[i];
-}
-
 var output = {
     path: ___dirname + package_json.dist.path,
     filename: MINIFY && package_json.dist.filenameMin ? package_json.dist.filenameMin : package_json.dist.filename,
@@ -39,7 +33,6 @@ module.exports = {
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
-    modules: [___dirname + 'node_modules'],
-    alias: alias
+    modules: [___dirname + 'node_modules']
   }
 }
